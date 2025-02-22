@@ -8,11 +8,12 @@ import { TutoComponent } from '../tuto/tuto.component';
 import { TemoignagesComponent } from '../temoignages/temoignages.component';
 import { StatComponent } from '../stat/stat.component';
 import { BanniereComponent } from '../banniere/banniere.component';
+import { ServicesComponent } from '../services/services.component';
 
 @Component({
   selector: 'app-clients',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, AproposComponent, ContactsComponent, MapsComponent, TutoComponent, TemoignagesComponent, StatComponent, BanniereComponent],
+  imports: [HeaderComponent, FooterComponent, AproposComponent, ContactsComponent, MapsComponent, TutoComponent, TemoignagesComponent, StatComponent, BanniereComponent,ServicesComponent],
   templateUrl: './clients.component.html',
   styleUrl: './clients.component.css'
 })

@@ -10,6 +10,7 @@
   .contact-header h1 {
     font-size: 2.5em;
     color: #007bff;
+    text-align: center;
   }
   
   .contact-header p {
@@ -59,5 +60,10 @@
   .contact-form button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+  button {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
   }
   

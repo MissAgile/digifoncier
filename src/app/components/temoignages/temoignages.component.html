@@ -1,1 +1,63 @@
-<p>temoignages works!</p>
+<div class="testimonials-section p-6">
+    <!-- En-tête -->
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold mb-2">Témoignages</h2>
+      <p class="text-gray-600">Découvrez les expériences de nos utilisateurs avec DigiFoncier</p>
+    </div>
+  
+    <!-- Filtres -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Filtrer par région</mat-label>
+        <mat-select [(ngModel)]="selectedRegion" (selectionChange)="filterTestimonials()">
+          <mat-option value="">Toutes les régions</mat-option>
+          <mat-option *ngFor="let region of regions" [value]="region">
+            {{region}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="w-full">
+        <mat-label>Trier par</mat-label>
+        <mat-select [(ngModel)]="sortBy" (selectionChange)="sortTestimonials()">
+          <mat-option value="recent">Plus récents</mat-option>
+          <mat-option value="rating">Meilleures notes</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  
+    <!-- Grille des témoignages -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <mat-card *ngFor="let testimonial of filteredTestimonials" class="testimonial-card">
+        <mat-card-header>
+          <mat-card-title>{{testimonial.authorName}}</mat-card-title>
+          <mat-card-subtitle>
+            {{testimonial.authorRole}} - {{testimonial.region}}
+            <mat-icon *ngIf="testimonial.isVerified" class="verified-icon">verified</mat-icon>
+          </mat-card-subtitle>
+        </mat-card-header>
+  
+        <mat-card-content class="p-4">
+          <p>{{testimonial.content}}</p>
+          <div class="flex gap-1 mt-4">
+            <mat-icon *ngFor="let star of [1,2,3,4,5]" 
+                     [class.text-yellow-400]="star <= testimonial.rating"
+                     [class.text-gray-300]="star > testimonial.rating">
+              star
+            </mat-icon>
+          </div>
+        </mat-card-content>
+  
+        <mat-card-footer class="p-4">
+          <span class="text-sm text-gray-600">
+            {{testimonial.date | date:'dd/MM/yyyy'}}
+          </span>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  
+    <!-- Bouton d'ajout -->
+    <button mat-fab color="primary" class="fixed bottom-6 right-6" (click)="openAddTestimonialForm()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>

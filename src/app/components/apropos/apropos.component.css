@@ -11,7 +11,7 @@
 
 /* Section Titre principal */
 .apropos-header {
-  background-color: #4CAF50;
+  background-color: #081349;
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -41,7 +41,7 @@
 }
 
 h2 {
-  color: #4CAF50;
+  color: #081349;
   font-size: 24px;
   margin-bottom: 10px;
 }
@@ -57,7 +57,7 @@ h2 {
 }
 
 .values li strong {
-  color: #4CAF50;
+  color: #081349;
 }
 
 /* Section Contact */
@@ -70,7 +70,7 @@ h2 {
 }
 
 .contact a {
-  color: #4CAF50;
+  color: #081349;
   text-decoration: none;
 }
 
